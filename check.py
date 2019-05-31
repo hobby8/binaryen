@@ -513,7 +513,7 @@ def run_gcc_tests():
     cmd = ['-I' + os.path.join(options.binaryen_root, 'src'), '-g', '-pthread', '-o', output_file]
     if t.endswith('.txt'):
       # check if there is a trace in the file, if so, we should build it
-      out = subprocess.Popen([os.path.join('scripts', 'clean_c_api_trace.py'), os.path.join(options.binaryen_test, 'example', t)], stdout=subprocess.PIPE).communicate()[0]
+      out = subprocess.check_output([os.path.join(options.binaryen_root, 'scripts', 'clean_c_api_trace.py'), os.path.join(options.binaryen_test, 'example', t)])
       if len(out) == 0:
         print '  (no trace in ', t, ')'
         continue
