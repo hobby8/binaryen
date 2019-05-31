@@ -1,5 +1,5 @@
 sudo: false
-dist: trusty
+dist: xenial
 language: cpp
 
 stages:
@@ -44,8 +44,7 @@ jobs:
         - 3.6
       addons:
         apt:
-          sources: ['ubuntu-toolchain-r-test']
-          packages: ['cmake', 'g++-5']
+          packages: ['cmake']
       before_install:
         - export ASAN_OPTIONS="symbolize=1"
       install:
