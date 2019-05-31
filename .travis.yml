@@ -44,7 +44,7 @@ jobs:
         - 3.6
       addons:
         apt:
-          packages: ['cmake']
+          packages: ['cmake', 'libtsan0']
       before_install:
         - export ASAN_OPTIONS="symbolize=1"
       install:
