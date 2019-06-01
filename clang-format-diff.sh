@@ -1,4 +1,5 @@
 #!/bin/bash
+set -o errexit
 MERGE_BASE=$(git merge-base origin/master HEAD)
 FORMAT_MSG=$(git clang-format $MERGE_BASE -q --diff -- src/)
 if [ -n "$FORMAT_MSG" -a "$FORMAT_MSG" != "no modified files to format" ]

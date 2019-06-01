@@ -1,4 +1,5 @@
 #!/bin/bash
+set -o errexit
 CLANG_DIR=$(dirname $(dirname $(which clang-tidy)))
 CLANG_TIDY_DIFF=$CLANG_DIR/share/clang/clang-tidy-diff.py
 MERGE_BASE=$(git merge-base origin/master HEAD)
